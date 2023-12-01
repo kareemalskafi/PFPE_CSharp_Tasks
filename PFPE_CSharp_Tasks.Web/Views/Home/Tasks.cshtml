@@ -7,7 +7,7 @@
 @{
     var requestCulture = Context.Features.Get<IRequestCultureFeature>();
 }
-
+@*
 <a class="btn btn-primary" asp-controller="Test" asp-action="Create">@localizer["create"]</a>
 
 <table class="table mt-4">
@@ -42,21 +42,56 @@
         </td>
     </tr>
 </table>
+*@
+@{
+    DateTime targetDateTask1 = new DateTime(2023, 11, 30);
+
+    DateTime currentDate = DateTime.Now;
+    TimeSpan difference = currentDate - targetDateTask1;
+}
 
 
-<div class="card" style="width: 18rem;">
-    <img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/csharp_original_logo_icon_146578.png" class="card-img-top" alt="csharp">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-    <div class="card-footer text-body-secondary">
-       @{
-        DateTime targetDate = new DateTime(2023, 11, 30);
-        DateTime currentDate = DateTime.Now;
-        TimeSpan difference = currentDate - targetDate;
-        }       
-        @difference.Days @localizer["days ago"].
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+            
+            <div class="card" style="width: 18rem;">
+                <img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/csharp_original_logo_icon_146578.png" class="card-img-top" alt="csharp">
+                <div class="card-body">
+                    <h5 class="card-title">@localizer["task"] 1</h5>
+                    <p class="card-text">@localizer["console application"].</p>
+                    <a class="btn btn-primary" asp-controller="Task" asp-action="TaskOne">@localizer["open"]</a>
+                </div>
+                <div class="card-footer text-body-secondary">
+                    @difference.Days @localizer["days ago"].
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col">          
+            <div class="card" style="width: 18rem;">
+                <img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/csharp_original_logo_icon_146578.png" class="card-img-top" alt="csharp">
+                <div class="card-body">
+                    <h5 class="card-title">@localizer["task"] 2</h5>
+                    <p class="card-text">@localizer["console application"].</p>
+                    <a class="btn btn-primary" asp-controller="Task" asp-action="TaskOne">@localizer["open"]</a>
+                </div>
+                <div class="card-footer text-body-secondary">
+                    @difference.Days @localizer["days ago"].
+                </div>
+            </div>
+        </div>
+
+        <div class="col">          
+
+        </div>
     </div>
 </div>
+
+
+
+
+
+
+

@@ -1,5 +1,5 @@
 {
-  "welcome": "Welcome {0}, How are you?",
+  "welcome": "Welcome, How are you?",
   "home": "Home",
   "privacy": "Privacy",
   "culture": "Culture",
@@ -12,6 +12,9 @@
   "name": "Name",
   "required": "Required field",
   "tasks": "Tasks",
-  "days ago": "Days ago"
+  "days ago": "Days ago",
+  "task": "Task",
+  "open": "Open",
+  "console application": "Console Application"
 
 }

@@ -21,7 +21,7 @@ namespace PFPE_CSharp_Tasks.Web.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.WelcomeMessage = string.Format(_localizer["welcome"], "DevCreed");
+           // ViewBag.WelcomeMessage = string.Format(_localizer["welcome"], "DevCreed");
             return View();
         }
 
