@@ -5,9 +5,98 @@
 
 <pre>
 
-    dsa
-    ds
-    dsd
-    fsdf
+using System;
+
+namespace ConsoleApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            ------------------------------------------------------------------------------------------
+            // Task 1: Read string from user and print the same string
+            ------------------------------------------------------------------------------------------
+
+            Console.WriteLine("Enter a string:");
+            string userInput = Console.ReadLine();
+            Console.WriteLine($"You entered: {userInput}");
+
+            ------------------------------------------------------------------------------------------
+            // Task 2: Define variables and display them
+            ------------------------------------------------------------------------------------------
+
+            double doubleVar = 3.14;
+            string stringVar = "Hello, World!";
+            char charVar = 'A';
+            bool boolVar = true;
+            int intVar = 42;
+            const int constVar = 100;
+
+            Console.WriteLine($"Double: {doubleVar}");
+            Console.WriteLine($"String: {stringVar}");
+            Console.WriteLine($"Char: {charVar}");
+            Console.WriteLine($"Boolean: {boolVar}");
+            Console.WriteLine($"Integer: {intVar}");
+            Console.WriteLine($"Constant: {constVar}");
+
+            ------------------------------------------------------------------------------------------
+            // Task 3: Define an array of cars and print them with array length
+            ------------------------------------------------------------------------------------------
+
+            string[] cars = { "Toyota", "Honda", "Ford", "BMW" };
+            Console.WriteLine("Cars:");
+            foreach (var car in cars)
+            {
+                Console.WriteLine(car);
+            }
+            Console.WriteLine($"Number of cars: {cars.Length}");
+
+            ------------------------------------------------------------------------------------------
+            // Task 4: Read first name, surname, and year of birth, then display them
+            ------------------------------------------------------------------------------------------
+
+            Console.WriteLine("Input your firstname:");
+            string firstName = Console.ReadLine();
+            Console.WriteLine("Input your lastname:");
+            string lastName = Console.ReadLine();
+            Console.WriteLine("Input your year of birth:");
+            int yearOfBirth = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"{firstName} {lastName} {yearOfBirth}");
+
+            ------------------------------------------------------------------------------------------
+            // Task 5: Store elements in an array and print them
+            ------------------------------------------------------------------------------------------
+
+            int[] elements = new int[10];
+            Console.WriteLine("Input 10 elements in the array:");
+            for (int i = 0; i < elements.Length; i++)
+            {
+                Console.Write($"element - {i} : ");
+                elements[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.Write("Elements in array are: ");
+            foreach (var element in elements)
+            {
+                Console.Write(element + " ");
+            }
+            Console.WriteLine();
+
+            ------------------------------------------------------------------------------------------
+            // Task 6: Find the sum of all elements of the array
+            ------------------------------------------------------------------------------------------
+
+            int sum = 0;
+            foreach (var element in elements)
+            {
+                sum += element;
+            }
+            Console.WriteLine($"Sum of all elements stored in the array is: {sum}");
+
+            Console.ReadLine(); // Keeps the console window open
+        }
+    }
+}
+
   
 </pre>

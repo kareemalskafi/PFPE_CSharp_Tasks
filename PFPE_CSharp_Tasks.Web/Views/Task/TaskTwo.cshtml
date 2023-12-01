@@ -5,12 +5,143 @@
 
 <pre>
 
-    dsa
-    ds
-    dsd
-    fsdf
-    @{
-        Console.Write("dd");
-      //  Console.ReadKey();
+using System;
+using System.Linq;
+
+namespace ConsoleApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ------------------------------------------------------------------------------------------
+            // Task 1: Display the smaller of two integers
+            ------------------------------------------------------------------------------------------
+
+            Console.WriteLine("Enter first number:");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter second number:");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+
+            int smaller = (num1 < num2) ? num1 : num2;
+            Console.WriteLine($"The smaller number is: {smaller}\n");
+
+            ------------------------------------------------------------------------------------------
+            // Task 2: Find the sign of a number
+            ------------------------------------------------------------------------------------------
+
+            Console.WriteLine("Enter a number:");
+            int number = Convert.ToInt32(Console.ReadLine());
+
+            string sign = (number >= 0) ? "positive" : "negative";
+            Console.WriteLine($"The sign is: {sign}\n");
+
+            ------------------------------------------------------------------------------------------
+            // Task 3: Sort three numbers in ascending order
+            ------------------------------------------------------------------------------------------
+
+            Console.WriteLine("Enter three numbers:");
+            int[] numbers = new int[3];
+            for (int i = 0; i < 3; i++)
+            {
+                numbers[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            Array.Sort(numbers);
+            Console.WriteLine($"Output: {numbers[2]}, {numbers[1]}, {numbers[0]}\n");
+
+            ------------------------------------------------------------------------------------------
+            // Task 4: Find the maximum of five numbers
+            ------------------------------------------------------------------------------------------
+
+            Console.WriteLine("Enter five numbers:");
+            int[] nums = new int[5];
+            for (int i = 0; i < 5; i++)
+            {
+                nums[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            int max = nums.Max();
+            Console.WriteLine($"Output: {max}\n");
+
+            ------------------------------------------------------------------------------------------
+            // Task 5: Convert kilometers per hour to miles per hour
+            ------------------------------------------------------------------------------------------
+
+            Console.WriteLine("Input kilometers per hour:");
+            double kmph = Convert.ToDouble(Console.ReadLine());
+            double mph = kmph * 0.621371;
+            Console.WriteLine($"{kmph} kilometers per hour = {mph} miles per hour\n");
+
+            ------------------------------------------------------------------------------------------
+            // Task 6: Calculate total number of minutes from hours and minutes
+            ------------------------------------------------------------------------------------------
+
+            Console.WriteLine("Input hours:");
+            int hours = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Input minutes:");
+            int minutes = Convert.ToInt32(Console.ReadLine());
+
+            int totalMinutes = (hours * 60) + minutes;
+            Console.WriteLine($"Total: {totalMinutes} minutes\n");
+
+            ------------------------------------------------------------------------------------------
+            // Task 7: Display total hours and minutes from given minutes
+            ------------------------------------------------------------------------------------------
+
+            Console.WriteLine("Input minutes:");
+            int givenMinutes = Convert.ToInt32(Console.ReadLine());
+
+            int hrs = givenMinutes / 60;
+            int mins = givenMinutes % 60;
+            Console.WriteLine($"{hrs} Hours, {mins} Minutes\n");
+
+            ------------------------------------------------------------------------------------------
+            // Task 8: Print elements of an array with fixed length
+            ------------------------------------------------------------------------------------------
+
+            string[] sentences = {
+                "This is a short sentence.",
+                "This is a longer sentence.",
+                "Sentence.",
+                "Another longer sentence here.",
+                "A very lengthy sentence that goes on and on."
+            };
+
+            int fixedLength = 20;
+
+            foreach (string sentence in sentences)
+            {
+                string truncated = (sentence.Length > fixedLength) ? sentence.Substring(0, fixedLength) : sentence.PadRight(fixedLength);
+                Console.WriteLine(truncated);
+            }
+            Console.WriteLine();
+
+            ------------------------------------------------------------------------------------------
+            // Task 9: Reverse words with odd lengths in a string
+            ------------------------------------------------------------------------------------------
+
+            Console.WriteLine(reverseOdd("Bananas")); // Output: "sananaB"
+            Console.WriteLine(reverseOdd("One two three four")); // Output: "enO owt eerht four"
+
+            Console.ReadLine(); // Keeps the console window open
+         }
+
+            static string reverseOdd(string input)
+            {
+                string[] words = input.Split(' ');
+           
+                for (int i = 0; i < words.Length; i++)
+                {
+                    if (words[i].Length % 2 != 0)
+                    {
+                        words[i] = new string(words[i].Reverse().ToArray());
+                    }
+                }
+           
+                return string.Join(" ", words);
+            }
     }
+}
+
 </pre>
