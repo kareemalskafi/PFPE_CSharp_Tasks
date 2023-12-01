@@ -26,7 +26,7 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
     var supportedCultures = new[]
     {
         new CultureInfo("en-US"),
-        new CultureInfo("ar-EG"),
+        new CultureInfo("ar-JO"),
         new CultureInfo("de-DE")
     };
 
@@ -50,7 +50,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-var supportedCultures = new[] { "en-US", "ar-EG", "de-DE" };
+var supportedCultures = new[] { "en-US", "ar-JO", "de-DE" };
 var localizationOptions = new RequestLocalizationOptions()
     //.SetDefaultCulture(supportedCultures[0])
     .AddSupportedCultures(supportedCultures)

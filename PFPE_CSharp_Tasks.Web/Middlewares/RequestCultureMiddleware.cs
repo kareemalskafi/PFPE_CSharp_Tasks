@@ -24,7 +24,7 @@ namespace PFPE_CSharp_Tasks.Web.Middlewares
                 switch (browserLanguage)
                 {
                     case "ar":
-                        culture = "ar-EG";
+                        culture = "ar-JO";
                         break;
 
                     case "de":

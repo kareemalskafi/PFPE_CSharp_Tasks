@@ -10,5 +10,8 @@
   "create": "Create",
   "save": "Save",
   "name": "Name",
-  "required": "Required field"
+  "required": "Required field",
+  "tasks": "Tasks",
+  "days ago": "Days ago"
+
 }
