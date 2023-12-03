@@ -1,0 +1,256 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer localizer
+
+@{
+    ViewData["Title"] = "Task 1";
+}
+
+<pre>
+
+using System;
+
+namespace ConsoleApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            ------------------------------------------------------------------------------------------
+            // 1- Function to calculate sum and average of 10 numbers
+            ------------------------------------------------------------------------------------------
+
+            Console.WriteLine("Enter 10 numbers:");
+            double[] numbers = new double[10];
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write($"Number-{i + 1}: ");
+                numbers[i] = Convert.ToDouble(Console.ReadLine());
+            }
+            double sum, average;
+            CalculateSumAndAverage(numbers, out sum, out average);
+            Console.WriteLine($"The sum of 10 numbers is: {sum}");
+            Console.WriteLine($"The average is: {average}");
+
+
+                                -----------------------------------------
+            static void CalculateSumAndAverage(double[] numbers, out double sum, out double average)
+            {
+            sum = 0;
+            foreach (double num in numbers)
+            {
+                sum += num;
+            }
+            average = sum / numbers.Length;
+            }
+
+            ------------------------------------------------------------------------------------------
+            // 2- Function to display the cube of numbers up to a given integer
+            ------------------------------------------------------------------------------------------
+
+            Console.Write("Enter number of terms: ");
+            int terms = Convert.ToInt32(Console.ReadLine());
+            DisplayCubeOfNumbers(terms);
+
+
+                                -----------------------------------------
+            static void DisplayCubeOfNumbers(int terms)
+           {
+            Console.WriteLine("Cube of numbers:");
+            for (int i = 1; i <= terms; i++)
+            {
+                int cube = i * i * i;
+                Console.WriteLine($"Number is: {i} and cube of {i} is: {cube}");
+            }
+            }
+
+            ------------------------------------------------------------------------------------------
+            // 3- Function to return numbers greater than 1950
+            ------------------------------------------------------------------------------------------
+
+            int[] years = { 1763, 1972, 1925, 1916, 1984, 1124, 1950, 2020 };
+            int[] resultYears = GetYearsGreaterThan1950(years);
+            Console.WriteLine("Years greater than 1950:");
+            foreach (int year in resultYears)
+            {
+                Console.WriteLine(year);
+            }
+
+                                -----------------------------------------
+            static int[] GetYearsGreaterThan1950(int[] years)
+               {
+                    return Array.FindAll(years, year => year > 1950);
+               }
+
+            ------------------------------------------------------------------------------------------
+            // 4- Function to calculate age in days
+            ------------------------------------------------------------------------------------------
+
+            Console.Write("Enter age in years: ");
+            int ageInYears = Convert.ToInt32(Console.ReadLine());
+            int ageInDays = ConvertAgeToDays(ageInYears);
+            Console.WriteLine($"Age in days: {ageInDays}");
+
+
+                                -----------------------------------------
+            static int ConvertAgeToDays(int ageInYears)
+               {
+                   return ageInYears * 365;
+               }
+
+            ------------------------------------------------------------------------------------------
+            // 5- Function to count legs of animals
+            ------------------------------------------------------------------------------------------
+
+            int totalLegs = CountLegs(2, 3, 5);
+            Console.WriteLine($"Total legs among all animals: {totalLegs}");
+
+
+                                -----------------------------------------
+            static int CountLegs(int chickens, int cows, int pigs)
+            {
+            if (chickens % 2 != 0 || cows % 2 != 0 || pigs % 2 != 0)
+            {
+                throw new ArgumentException("Invalid input: Odd numbers are not allowed.");
+            }
+
+            int totalLegs = (chickens * 2) + (cows * 4) + (pigs * 4);
+            return totalLegs;
+            }
+
+            ------------------------------------------------------------------------------------------
+            // 6- Function for login verification
+            ------------------------------------------------------------------------------------------
+
+            Console.Write("Enter username: ");
+            string username = Console.ReadLine();
+            Console.Write("Enter password: ");
+            string password = Console.ReadLine();
+            string loginResult = Login(username, password);
+            Console.WriteLine(loginResult);
+
+
+                                -----------------------------------------
+            static string Login(string username, string password)
+            {
+            // Predefined users
+            string[] validUsers = { "user1", "user2", "user3" };
+            string[] validPasswords = { "pass1", "pass2", "pass3" };
+
+            for (int i = 0; i < validUsers.Length; i++)
+            {
+                if (username == validUsers[i] && password == validPasswords[i])
+                {
+                    return "Login successful!";
+                }
+            }
+
+            return "Login failed. Invalid username or password.";
+              }
+
+
+            ------------------------------------------------------------------------------------------
+            // 7- Function to calculate power of numbers
+            ------------------------------------------------------------------------------------------
+
+            Console.Write("Enter base number: ");
+            double baseNumber = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Enter exponent: ");
+            int exponent = Convert.ToInt32(Console.ReadLine());
+            double powerResult = CalculatePower(baseNumber, exponent);
+            Console.WriteLine($"Result: {powerResult}");
+
+
+                                -----------------------------------------
+            static double CalculatePower(double baseNumber, int exponent)
+              {
+                       return Math.Pow(baseNumber, exponent);
+              }
+
+            ------------------------------------------------------------------------------------------
+            // 8- Function to check leap year
+            ------------------------------------------------------------------------------------------
+
+            Console.Write("Enter a year (1900-2024): ");
+            int yearToCheck = Convert.ToInt32(Console.ReadLine());
+            bool isLeapYear = CheckLeapYear(yearToCheck);
+            Console.WriteLine(isLeapYear ? "It's a leap year." : "It's not a leap year.");
+
+
+                                -----------------------------------------
+            static bool CheckLeapYear(int year)
+              {
+                      return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+              }
+
+            ------------------------------------------------------------------------------------------
+            // 9- Function to check prime number
+            ------------------------------------------------------------------------------------------
+
+            Console.Write("Enter a number to check for prime: ");
+            int numberToCheck = Convert.ToInt32(Console.ReadLine());
+            bool isPrime = IsPrime(numberToCheck);
+            Console.WriteLine(isPrime ? $"{numberToCheck} is a prime number." : $"{numberToCheck} is not a prime number.");
+
+
+                                -----------------------------------------
+           static bool IsPrime(int number)
+           {
+            if (number <= 1)
+                return false;
+
+            for (int i = 2; i * i <= number; i++)
+            {
+                if (number % i == 0)
+                    return false;
+            }
+            return true;
+            }
+
+
+            ------------------------------------------------------------------------------------------
+            // 10- Function to count words in a sentence
+            ------------------------------------------------------------------------------------------
+
+            Console.Write("Enter a sentence: ");
+            string sentence = Console.ReadLine();
+            int wordCount = CountWords(sentence);
+            Console.WriteLine($"Number of words in the sentence: {wordCount}");
+
+            Console.ReadLine(); // Keep console open until a key is pressed
+
+
+                                -----------------------------------------
+
+            static int CountWords(string sentence)
+            {
+            int wordCount = 0;
+            bool inWord = false;
+
+            foreach (char c in sentence)
+            {
+                if (char.IsLetter(c))
+                {
+                    if (!inWord)
+                    {
+                        inWord = true;
+                        wordCount++;
+                    }
+                }
+                else
+                {
+                    inWord = false;
+                }
+             }
+                    return wordCount;
+              }    
+            }
+
+
+    }
+}
+
+
+
+</pre>

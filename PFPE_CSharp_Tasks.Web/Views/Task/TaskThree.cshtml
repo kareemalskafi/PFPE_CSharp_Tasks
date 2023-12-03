@@ -1,0 +1,140 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer localizer
+
+@{
+    ViewData["Title"] = "Task 3";
+}
+
+<pre>
+
+using System;
+
+namespace ConsoleApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            ------------------------------------------------------------------------------------------
+            // 1- Correcting syntax errors
+            ------------------------------------------------------------------------------------------
+           
+            string[] ARR = { "1", "7", "9", "45" };
+            string[] arr2 = { "Str", "alex", "moh" };
+            string[] arr3 = { "the", "fox", "over", "lazy", "dog" };
+
+            ------------------------------------------------------------------------------------------
+            // 2- Finding index of "Banana" and "Tomato"
+            ------------------------------------------------------------------------------------------
+
+            string[] fruits = { "Tomato", "Banana", "Watermelon" };
+            int indexOfBanana = Array.IndexOf(fruits, "Banana");
+            int indexOfTomato = Array.IndexOf(fruits, "Tomato");
+            Console.WriteLine("Index of Banana: " + indexOfBanana);
+            Console.WriteLine("Index of Tomato: " + indexOfTomato);
+
+            ------------------------------------------------------------------------------------------
+            // 3- Creating and printing multiple arrays
+            ------------------------------------------------------------------------------------------
+
+            string[] favoriteFood = { "Pizza", "Sushi", "Burger", "Pasta", "Salad" };
+            string[] favoriteSport = { "Football", "Basketball", "Tennis" };
+            string[] favoriteMovie = { "Inception", "The Dark Knight", "Interstellar", "The Shawshank Redemption" };
+
+            Console.WriteLine("Favorite Foods:");
+            foreach (var food in favoriteFood)
+            {
+                Console.WriteLine(food);
+            }
+
+            Console.WriteLine("Favorite Sports:");
+            foreach (var sport in favoriteSport)
+            {
+                Console.WriteLine(sport);
+            }
+
+            Console.WriteLine("Favorite Movies:");
+            foreach (var movie in favoriteMovie)
+            {
+                Console.WriteLine(movie);
+            }
+
+            ------------------------------------------------------------------------------------------
+            // 4- Calculating sum of three numbers
+            ------------------------------------------------------------------------------------------
+
+            Console.Write("Enter three numbers separated by commas: ");
+            string input = Console.ReadLine();
+            string[] numbers = input.Split(',');
+            int sum = 0;
+            foreach (string number in numbers)
+            {
+                sum += Convert.ToInt32(number);
+            }
+            Console.WriteLine("The sum of three numbers: " + sum);
+
+            ------------------------------------------------------------------------------------------
+            // 5- Displaying n terms of odd numbers and their sum from 1 to 100
+            ------------------------------------------------------------------------------------------
+
+            int n = 10; // Change 'n' for desired number of terms
+            int count = 0, sumOfOdds = 0;
+            Console.Write($"The odd numbers are:");
+            for (int i = 1; i <= 100 && count < n; i += 2)
+            {
+                Console.Write($" {i}");
+                sumOfOdds += i;
+                count++;
+            }
+            Console.WriteLine($"The Sum of odd Numbers is: {sumOfOdds}");
+
+            ------------------------------------------------------------------------------------------
+            // 6- Displaying right angle triangle pattern using asterisks
+            ------------------------------------------------------------------------------------------
+
+            Console.WriteLine("The pattern like right angle triangle using asterisk:");
+            int rows = 3; // Change 'rows' for desired number of rows
+            for (int i = 1; i <= rows; i++)
+            {
+                for (int j = 1; j <= rows - i; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (int k = 1; k <= i; k++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+
+            ------------------------------------------------------------------------------------------
+            // 7- Displaying right angle triangle pattern with numbers increased by 1
+            ------------------------------------------------------------------------------------------
+
+            Console.WriteLine("The pattern like right angle triangle with number increased by 1:");
+            int rowCount = 4; // Change 'rowCount' for desired number of rows
+            int number = 1;
+            for (int i = 1; i <= rowCount; i++)
+            {
+                for (int j = 1; j <= rowCount - i; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (int k = 1; k <= i; k++)
+                {
+                    Console.Write(number + " ");
+                    number++;
+                }
+                Console.WriteLine();
+            }
+
+            Console.ReadLine();
+        }
+    }
+}
+
+
+
+</pre>

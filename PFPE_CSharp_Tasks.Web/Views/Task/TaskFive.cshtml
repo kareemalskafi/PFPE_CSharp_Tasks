@@ -1,0 +1,178 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer localizer
+
+@{
+    ViewData["Title"] = "Task 5";
+}
+
+<pre>
+
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+
+        ------------------------------------------------------------------------------------------
+        // Task 1: Convert minutes to seconds
+        ------------------------------------------------------------------------------------------
+
+        Console.WriteLine(ConvertMinutesToSeconds(5)); // Expected output: 300
+
+
+                                -----------------------------------------
+         static int ConvertMinutesToSeconds(int minutes)
+            {
+                    return minutes * 60;
+            }
+
+        ------------------------------------------------------------------------------------------
+        // Task 2: Increment a number by +1
+        ------------------------------------------------------------------------------------------
+
+        Console.WriteLine(IncrementByOne(5)); // Expected output: 6
+
+
+                                -----------------------------------------
+        static int IncrementByOne(int number)
+            {
+                     return number + 1;
+            }
+
+        ------------------------------------------------------------------------------------------
+        // Task 3: Return the first element of an array
+        ------------------------------------------------------------------------------------------
+
+        int[] numbers = { 1, 2, 3, 4, 5 };
+        Console.WriteLine(ReturnFirstElement(numbers)); // Expected output: 1
+
+
+                                -----------------------------------------
+        static int ReturnFirstElement(int[] numbers)
+            {
+                     return numbers[0];
+            }
+
+        ------------------------------------------------------------------------------------------
+        // Task 4: Calculate the area of a triangle
+        ------------------------------------------------------------------------------------------
+
+        Console.WriteLine(CalculateTriangleArea(5, 7)); // Expected output: 17.5
+
+
+                                -----------------------------------------
+        static double CalculateTriangleArea(double base, double height)
+          {
+                      return 0.5 * base * height;
+          }
+
+
+        ------------------------------------------------------------------------------------------
+        // Task 5: Return even numbers at even indexes
+        ------------------------------------------------------------------------------------------
+
+        int[] nums = { 5, 2, 2, 1, 8, 66, 55, 77, 34, 9, 55, 1 };
+        Console.WriteLine(string.Join(", ", EvenNumberEvenIndex(nums))); // Expected output: 2, 8, 34
+
+
+                                -----------------------------------------
+        static int[] EvenNumberEvenIndex(int[] nums)
+            {
+                 return nums.Where((num, index) => num % 2 == 0 && index % 2 == 0).ToArray();
+            }
+        
+        ------------------------------------------------------------------------------------------
+        // Task 6: Return strings with odd length at even indexes
+        ------------------------------------------------------------------------------------------
+
+        string[] strings = { "alex", "mercer", "madrasa", "rashed2", "emad", "hala" };
+        Console.WriteLine(string.Join(", ", EvenIndexOddLength(strings))); // Expected output: madrasa
+
+
+                                -----------------------------------------
+        static string[] EvenIndexOddLength(string[] strings)
+            {
+                return strings.Where((str, index) => index % 2 == 0 && str.Length % 2 != 0).ToArray();
+            }
+
+        ------------------------------------------------------------------------------------------
+        // Task 7: Return elements powered by their indexes
+        ------------------------------------------------------------------------------------------
+
+        int[] numsPower = { 44, 5, 4, 3, 2, 10 };
+        Console.WriteLine(string.Join(", ", PowerElementIndex(numsPower))); // Expected output: 0, 5, 16, 27, 16, 100000
+
+
+                                -----------------------------------------
+        static int[] PowerElementIndex(int[] nums)
+        {
+            List<int> result = new List<int>();
+            for (int i = 0; i < nums.Length; i++)
+              {
+                     result.Add((int)Math.Pow(nums[i], i));
+              }
+           return result.ToArray();
+        }
+
+        ------------------------------------------------------------------------------------------
+        // Task 8: Multiplication using only sum
+        ------------------------------------------------------------------------------------------
+
+        Console.WriteLine(MultiplicationUsingSum(5, 4)); // Expected output: 20
+
+
+                                -----------------------------------------
+        static int MultiplicationUsingSum(int a, int b)
+        {
+            int result = 0;
+            for (int i = 0; i < b; i++)
+            {
+                result += a;
+            }
+                return result;
+        }
+
+
+        ------------------------------------------------------------------------------------------
+        // Task 9: Multiplication from first number to the second number
+        ------------------------------------------------------------------------------------------
+
+        Console.WriteLine(MultiplicationFromFirstToSecond(4, 5)); // Expected output: 20
+        Console.WriteLine(MultiplicationFromFirstToSecond(3, 6)); // Expected output: 360
+
+
+                                -----------------------------------------
+         static int MultiplicationFromFirstToSecond(int start, int end)
+        {
+           int result = start;
+           for (int i = start + 1; i <= end; i++)
+                    {
+                         result *= i;
+                    }
+                         return result;
+       }
+
+        ------------------------------------------------------------------------------------------
+        // Task 10: Calculate average of an array
+        ------------------------------------------------------------------------------------------
+
+        int[] numsArray = { 1, 2, 3, 8, 9 };
+        Console.WriteLine(AverageOfArray(numsArray)); // Expected output: 4.6
+        int[] numsArray2 = { 1, 2, 3, 8, 9, 77 };
+        Console.WriteLine(AverageOfArray(numsArray2)); // Expected output: 16.6
+   
+    
+                                -----------------------------------------
+        static double AverageOfArray(int[] nums)
+          {
+                 return nums.Average();
+          }       
+    
+    }
+
+}
+</pre>

@@ -1,25 +1,26 @@
 {
-  
-    "welcome": "Willkommen, wie geht es Ihnen?",
-    "home": "Startseite",
-    "privacy": "Datenschutz",
-    "culture": "Kultur",
-    "uiCulture": "Benutzeroberflächenkultur",
-    "date": "Datum",
-    "currency": "Währung",
-    "numbers": "Zahlen",
-    "create": "Erstellen",
-    "save": "Speichern",
-    "name": "Name",
-    "required": "Pflichtfeld",
-    "tasks": "Aufgaben",
-    "days ago": "Vor Tagen",
-    "task": "Aufgabe",
-    "open": "Öffnen",
-    "console application": "Konsolenanwendung",
-    "Kareem Al_Skafi": "Kareem Al_Skafi",
-    "privacy policy": "Datenschutzrichtlinie",
-    "custome warning1": "Unsere Website kann Links zu Websites von Drittanbietern enthalten. Wir sind nicht verantwortlich für die Datenschutzpraktiken oder den Inhalt dieser externen Websites."
-  
+
+  "welcome": "Willkommen, wie geht es Ihnen?",
+  "home": "Startseite",
+  "privacy": "Datenschutz",
+  "culture": "Kultur",
+  "uiCulture": "Benutzeroberflächenkultur",
+  "date": "Datum",
+  "currency": "Währung",
+  "numbers": "Zahlen",
+  "create": "Erstellen",
+  "save": "Speichern",
+  "name": "Name",
+  "required": "Pflichtfeld",
+  "tasks": "Aufgaben",
+  "days ago": "Vor Tagen",
+  "task": "Aufgabe",
+  "open": "Öffnen",
+  "console application": "Konsolenanwendung",
+  "function application": "Funktionsanwendung",
+  "Kareem Al_Skafi": "Kareem Al_Skafi",
+  "privacy policy": "Datenschutzrichtlinie",
+  "custome warning1": "Unsere Website kann Links zu Websites von Drittanbietern enthalten. Wir sind nicht verantwortlich für die Datenschutzpraktiken oder den Inhalt dieser externen Websites."
+
 
 }
