@@ -97,7 +97,8 @@ class Program
            }
 
         ------------------------------------------------------------------------------------------
-        // Task 6: Create a function that takes an array of numbers and returns "Boom!" if the digit 7 appears in the array.
+        // Task 6: Create a function that takes an array of numbers and returns "Boom!" if 
+        the digit 7 appears in the array.
         // Otherwise, return "there is no 7 in the array".
         ------------------------------------------------------------------------------------------
 
@@ -114,7 +115,8 @@ class Program
             }
 
         ------------------------------------------------------------------------------------------
-        // Task 7: Write a function that inserts a white space between every instance of a lower character followed immediately by an upper character.
+        // Task 7: Write a function that inserts a white space between every instance of a lower character 
+        followed immediately by an upper character.
         ------------------------------------------------------------------------------------------
 
         Console.WriteLine(insertWhitespace("SheWalksToTheBeach")); // Expected output: "She Walks To The Beach"
@@ -125,7 +127,8 @@ class Program
                                 -----------------------------------------
            static string insertWhitespace(string str)
            {
-               return string.Concat(str.Select((x, i) => i > 0 && char.IsUpper(x) && char.IsLower(str[i - 1]) ? " " + x.ToString() : x.ToString()));
+               return string.Concat(str.Select((x, i) => i > 0 && char.IsUpper(x) && 
+               char.IsLower(str[i - 1]) ? " " + x.ToString() : x.ToString()));
            }
 
         ------------------------------------------------------------------------------------------
@@ -161,7 +164,8 @@ class Program
             }
 
         ------------------------------------------------------------------------------------------
-        // Task 10: Create a function that takes an array of items and checks if the last item matches the rest of the array concatenated together.
+        // Task 10: Create a function that takes an array of items and checks if
+        the last item matches the rest of the array concatenated together.
         ------------------------------------------------------------------------------------------
 
         Console.WriteLine(matchLastItem(new object[] { "rsq", "6hi", "g", "rsq6hig" })); // Expected output: true
@@ -236,8 +240,10 @@ class Program
         // Task 14: Remove the last vowel in each word in a sentence
         ------------------------------------------------------------------------------------------
 
-        Console.WriteLine(removeLastVowel("Those who dare to fail miserably can achieve greatly.")); // Expected output: "Thos wh dar t fal miserbly cn achiev gretly."
-        Console.WriteLine(removeLastVowel("Love is a serious mental disease.")); // Expected output: "Lov s serios mentl diseas"
+        Console.WriteLine(removeLastVowel("Those who dare to fail miserably can achieve greatly.")); 
+        // Expected output: "Thos wh dar t fal miserbly cn achiev gretly."
+        Console.WriteLine(removeLastVowel("Love is a serious mental disease.")); 
+        // Expected output: "Lov s serios mentl diseas"
 
 
 ر                                -----------------------------------------
