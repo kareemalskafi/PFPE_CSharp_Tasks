@@ -1,0 +1,91 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer localizer
+
+@{
+    ViewData["Title"] = "Task 6";
+}
+
+<pre>
+
+using System;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+
+        ------------------------------------------------------------------------------------------
+        // Task 1: Get number of days between two dates
+        ------------------------------------------------------------------------------------------
+
+        DateTime date1 = new DateTime(2023, 11, 14);
+        DateTime date2 = new DateTime(2023, 11, 20);
+        Console.WriteLine(GetDays(date1, date2)); // Expected output: 6
+
+                                -----------------------------------------
+        static int GetDays(DateTime date1, DateTime date2)
+        {
+            TimeSpan difference = date2 - date1;
+            return Math.Abs(difference.Days);
+        }
+
+        ------------------------------------------------------------------------------------------
+        // Task 2: Get strings with numbers in them from an array of strings
+        ------------------------------------------------------------------------------------------
+
+        string[] arr1 = { "1a", "a", "2b", "b" };
+        string[] arr2 = { "abc", "abc10" };
+        Console.WriteLine(string.Join(", ", NumInStr(arr1))); // Expected output: 1a, 2b
+        Console.WriteLine(string.Join(", ", NumInStr(arr2))); // Expected output: abc10
+
+                                -----------------------------------------
+        static string[] NumInStr(string[] arr)
+        {
+            return arr.Where(s => Regex.IsMatch(s, (at) "\d")).ToArray();
+        }
+
+        ------------------------------------------------------------------------------------------
+        // Task 3: Reverse odd-length words in a string
+        ------------------------------------------------------------------------------------------
+
+        Console.WriteLine(ReverseOdd("Bananas")); // Expected output: sananaB
+        Console.WriteLine(ReverseOdd("One two three four")); // Expected output: enO owt eerht four
+
+                                -----------------------------------------
+        static string ReverseOdd(string str)
+        {
+            string[] words = str.Split(' ');
+            for (int i = 0; i < words.Length; i++)
+            {
+                if (words[i].Length % 2 != 0)
+                {
+                    char[] charArray = words[i].ToCharArray();
+                    Array.Reverse(charArray);
+                    words[i] = new string(charArray);
+                }
+            }
+            return string.Join(" ", words);
+        }
+
+        ------------------------------------------------------------------------------------------
+        // Task 4: Check if a number is pandigital
+        ------------------------------------------------------------------------------------------
+
+        Console.WriteLine(IsPandigital(98140723568910)); // Expected output: True
+        Console.WriteLine(IsPandigital(90864523148909)); // Expected output: False
+        Console.WriteLine(IsPandigital(112233445566778899)); // Expected output: False
+
+                                -----------------------------------------
+        static bool IsPandigital(long num)
+        {
+            string digits = num.ToString();
+            return digits.Length == 10 && digits.Distinct().Count() == 10;
+        }
+
+    }
+}
+
+</pre>
