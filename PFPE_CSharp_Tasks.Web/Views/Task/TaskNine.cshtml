@@ -1,0 +1,83 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer localizer
+
+@{
+    ViewData["Title"] = "Task 9";
+}
+
+<pre>
+
+-- Create Customers table
+
+CREATE TABLE Customers (
+    CustomerID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Email VARCHAR(100),
+    Phone VARCHAR(20)
+);
+
+
+-- Insert data into Customers table
+
+INSERT INTO Customers (CustomerID, FirstName, LastName, Email, Phone)
+VALUES (1, 'John', 'Doe', 'johndoe@example.com', '123-456-7890'),
+       (2, 'Jane', 'Smith', 'janesmith@example.com', '987-654-3210');
+
+
+-- Create Orders table
+
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    CustomerID INT,
+    OrderDate DATE,
+    TotalAmount DECIMAL(10, 2),
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
+
+
+-- Insert data into Orders table
+
+INSERT INTO Orders (OrderID, CustomerID, OrderDate, TotalAmount)
+VALUES (1, 1, '2023-01-15', 150.00),
+       (2, 2, '2023-02-20', 250.50);
+
+
+-- Create Products table
+
+CREATE TABLE Products (
+    ProductID INT PRIMARY KEY,
+    ProductName VARCHAR(100),
+    Price DECIMAL(10, 2)
+);
+
+
+-- Insert data into Products table
+
+INSERT INTO Products (ProductID, ProductName, Price)
+VALUES (1, 'Product A', 25.99),
+       (2, 'Product B', 39.50);
+
+
+-- Create Employees table
+
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Department VARCHAR(50),
+    HireDate DATE
+);
+
+
+-- Insert data into Employees table
+
+INSERT INTO Employees (EmployeeID, FirstName, LastName, Department, HireDate)
+VALUES (1, 'Alice', 'Johnson', 'Sales', '2020-05-10'),
+       (2, 'Bob', 'Smith', 'Marketing', '2019-08-15');
+
+
+
+
+</pre>

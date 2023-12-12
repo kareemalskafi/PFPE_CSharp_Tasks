@@ -52,12 +52,14 @@
     DateTime DateTask1 = new DateTime(2023, 11, 30);
     DateTime DateTask2 = new DateTime(2023, 12, 03);
     DateTime DateTask3 = new DateTime(2023, 12, 05);
+    DateTime DateTask4 = new DateTime(2023, 12, 12);
 
     DateTime currentDate = DateTime.Now;
     TimeSpan differenceDateTask1 = currentDate - DateTask1;
 
     TimeSpan differenceDateTask2 = currentDate - DateTask2;
     TimeSpan differenceDateTask3 = currentDate - DateTask3;
+    TimeSpan differenceDateTask4 = currentDate - DateTask4;
 }
 
 
@@ -159,6 +161,48 @@
                 </div>
                 <div class="card-footer text-body-secondary">
                     @differenceDateTask3.Days @localizer["days ago"].
+                </div>
+            </div>
+        </div>
+
+          <div class="col m-3">
+            <div class="card" style="width: 18rem;">
+                <img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/csharp_original_logo_icon_146578.png" class="card-img-top" alt="csharp">
+                <div class="card-body">
+                    <h5 class="card-title">@localizer["task"] 8</h5>
+                    <p class="card-text">@localizer["function application"].</p>
+                    <a class="btn btn-primary" asp-controller="Task" asp-action="TaskEight">@localizer["open"]</a>
+                </div>
+                <div class="card-footer text-body-secondary">
+                    @differenceDateTask3.Days @localizer["days ago"].
+                </div>
+            </div>
+        </div>
+
+        <div class="col m-3">
+            <div class="card" style="width: 18rem;">
+                <img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/csharp_original_logo_icon_146578.png" class="card-img-top" alt="csharp">
+                <div class="card-body">
+                    <h5 class="card-title">@localizer["task"] 9</h5>
+                    <p class="card-text">@localizer["sql application"].</p>
+                    <a class="btn btn-primary" asp-controller="Task" asp-action="TaskNine">@localizer["open"]</a>
+                </div>
+                <div class="card-footer text-body-secondary">
+                    @differenceDateTask4.Days @localizer["days ago"].
+                </div>
+            </div>
+        </div>
+
+        <div class="col m-3">
+            <div class="card" style="width: 18rem;">
+                <img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/csharp_original_logo_icon_146578.png" class="card-img-top" alt="csharp">
+                <div class="card-body">
+                    <h5 class="card-title">@localizer["task"] 10</h5>
+                    <p class="card-text">@localizer["sql application"].</p>
+                    <a class="btn btn-primary" asp-controller="Task" asp-action="TaskTen">@localizer["open"]</a>
+                </div>
+                <div class="card-footer text-body-secondary">
+                    @differenceDateTask4.Days @localizer["days ago"].
                 </div>
             </div>
         </div>

@@ -1,0 +1,61 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer localizer
+
+@{
+    ViewData["Title"] = "Task 10";
+}
+
+<pre>
+
+-- Create Departments table
+
+    CREATE TABLE Departments (
+    department_id INT PRIMARY KEY AUTO_INCREMENT,
+    department_name VARCHAR(100) NOT NULL
+);
+
+
+-- Create Employees table
+
+CREATE TABLE Employees (
+    employee_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    birthdate DATE,
+    phone_number VARCHAR(20),
+    national_id VARCHAR(20),
+    nationality VARCHAR(50),
+    marital_status VARCHAR(20),
+    personal_photo BLOB,
+    entry_date DATE,
+    password VARCHAR(100),
+    department_id INT,
+    FOREIGN KEY (department_id) REFERENCES Departments(department_id)
+);
+
+
+-- Create Tasks table
+
+CREATE TABLE Tasks (
+    task_id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(100) NOT NULL,
+    start_date DATE,
+    due_date DATE,
+    description TEXT,
+    importance_level INT,
+    employee_id INT,
+    FOREIGN KEY (employee_id) REFERENCES Employees(employee_id)
+);
+
+
+-- Create Feedback table
+
+CREATE TABLE Feedback (
+    feedback_id INT PRIMARY KEY AUTO_INCREMENT,
+    email TEXT
+);
+
+
+
+
+</pre>
