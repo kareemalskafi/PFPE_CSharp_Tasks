@@ -1,0 +1,133 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer localizer
+
+@{
+    ViewData["Title"] = "Task 11";
+}
+
+<pre>
+
+-- Create Users table
+
+CREATE TABLE Users (
+    UserID INT PRIMARY KEY,
+    Username VARCHAR(50) UNIQUE,
+    Password VARCHAR(100),
+    FullName VARCHAR(100),
+    Email VARCHAR(100),
+    Birthdate DATE,
+    ProfileImage BLOB,
+    Address VARCHAR(255)
+);
+
+
+-- Create Services table
+
+CREATE TABLE Services (
+    ServiceID INT PRIMARY KEY,
+    ServiceName VARCHAR(50),
+    Description TEXT,
+    Price DECIMAL(10, 2)
+);
+
+
+-- Create UserServices table to manage user subscriptions to services
+
+CREATE TABLE UserServices (
+    UserSubscriptionID INT PRIMARY KEY,
+    UserID INT,
+    ServiceID INT,
+    PurchaseDate DATE,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID),
+    FOREIGN KEY (ServiceID) REFERENCES Services(ServiceID)
+);
+
+
+-- Create Payments table to track payments for services
+
+CREATE TABLE Payments (
+    PaymentID INT PRIMARY KEY,
+    UserID INT,
+    ServiceID INT,
+    PaymentDate DATE,
+    Amount DECIMAL(10, 2),
+    FOREIGN KEY (UserID) REFERENCES Users(UserID),
+    FOREIGN KEY (ServiceID) REFERENCES Services(ServiceID)
+);
+
+
+-- Insert records into Users table
+
+INSERT INTO Users (UserID, Username, Password, FullName, Email, Birthdate, Address)
+VALUES (1, 'user1', 'password1', 'John Doe', 'john@example.com', '1990-05-15', '123 Main St'),
+       (2, 'user2', 'password2', 'Jane Smith', 'jane@example.com', '1995-10-22', '456 Elm St'),
+       (3, 'user3', 'password3', 'Alice Johnson', 'alice@example.com', '1988-12-08', '789 Oak St');
+
+
+-- Insert records into Services table
+
+INSERT INTO Services (ServiceID, ServiceName, Description, Price)
+VALUES (1, 'Premium', 'Access to advanced features', 9.99),
+       (2, 'Business', 'Business communication tools', 19.99),
+       (3, 'Customization', 'Customize your messenger experience', 5.99);
+
+
+-- Insert records into UserServices table
+
+INSERT INTO UserServices (UserSubscriptionID, UserID, ServiceID, PurchaseDate)
+VALUES (1, 1, 1, '2023-01-01'),
+       (2, 2, 2, '2023-02-15'),
+       (3, 3, 3, '2023-03-20');
+
+
+-- Insert records into Payments table
+
+INSERT INTO Payments (PaymentID, UserID, ServiceID, PaymentDate, Amount)
+VALUES (1, 1, 1, '2023-01-01', 9.99),
+       (2, 2, 2, '2023-02-15', 19.99),
+       (3, 3, 3, '2023-03-20', 5.99);
+
+
+-- Update records in Users table
+
+UPDATE Users SET Email = 'john.doe@example.com' WHERE UserID = 1;
+
+
+-- Update records in Services table
+
+UPDATE Services SET Price = 14.99 WHERE ServiceID = 3;
+
+
+-- Update records in UserServices table
+
+UPDATE UserServices SET PurchaseDate = '2023-04-01' WHERE UserSubscriptionID = 3;
+
+
+-- Delete records from Users table
+
+DELETE FROM Users WHERE UserID = 3;
+
+
+-- Delete records from Services table
+
+DELETE FROM Services WHERE ServiceID = 1;
+
+
+-- Delete records from UserServices table
+
+DELETE FROM UserServices WHERE UserSubscriptionID = 2;
+
+
+-- Modify table name using DDL command
+
+ALTER TABLE UserServices RENAME TO Subscriptions;
+
+
+-- Modify columns' names and data types using DDL commands
+
+ALTER TABLE Users CHANGE COLUMN ProfileImage ProfilePicture BLOB;
+ALTER TABLE Services CHANGE COLUMN Description ServiceDescription TEXT;
+
+
+</pre>

@@ -57,5 +57,10 @@ namespace PFPE_CSharp_Tasks.Web.Controllers
         {
             return View();
         }
+
+        public IActionResult TaskEleven()
+        {
+            return View();
+        }
     }
 }

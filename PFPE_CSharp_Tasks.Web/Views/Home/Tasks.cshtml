@@ -53,6 +53,7 @@
     DateTime DateTask2 = new DateTime(2023, 12, 03);
     DateTime DateTask3 = new DateTime(2023, 12, 05);
     DateTime DateTask4 = new DateTime(2023, 12, 12);
+    DateTime DateTask5 = new DateTime(2023, 12, 14);
 
     DateTime currentDate = DateTime.Now;
     TimeSpan differenceDateTask1 = currentDate - DateTask1;
@@ -60,6 +61,7 @@
     TimeSpan differenceDateTask2 = currentDate - DateTask2;
     TimeSpan differenceDateTask3 = currentDate - DateTask3;
     TimeSpan differenceDateTask4 = currentDate - DateTask4;
+    TimeSpan differenceDateTask5 = currentDate - DateTask5;
 }
 
 
@@ -208,6 +210,17 @@
         </div>
 
         <div class="col m-3">
+            <div class="card" style="width: 18rem;">
+                <img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/csharp_original_logo_icon_146578.png" class="card-img-top" alt="csharp">
+                <div class="card-body">
+                    <h5 class="card-title">@localizer["task"] 11</h5>
+                    <p class="card-text">@localizer["sql application"].</p>
+                    <a class="btn btn-primary" asp-controller="Task" asp-action="TaskEleven">@localizer["open"]</a>
+                </div>
+                <div class="card-footer text-body-secondary">
+                    @differenceDateTask5.Days @localizer["days ago"].
+                </div>
+            </div>
         </div>
 
         <div class="col m-3">
